@@ -1,14 +1,44 @@
+
 <!DOCTYPE html>
-<html><head><meta charset='utf-8'><title>Japanese Learning</title></head><body>
-<h1>Danh sách</h1>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Japanese Learning PDFs</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        ul { list-style-type: none; padding-left: 20px; }
+        li { margin: 5px 0; }
+        .folder { font-weight: bold; cursor: pointer; color: #2c3e50; }
+        .folder::before { content: "📂 "; }
+        .hidden { display: none; }
+        a { text-decoration: none; color: #2980b9; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Danh sách tài liệu PDF</h1>
+    <p>Click vào thư mục để xem hoặc ẩn nội dung bên trong.</p>
 <ul>
-<li><strong>Minano-Nihongo</strong>
+<li><span class="folder" onclick="toggle(event)">Minano-Nihongo</span>
 <ul>
-<li><a href="Minano-Nihongo/Sách Bài Tập - Quyển 1.pdf">Minano-Nihongo/Sách Bài Tập - Quyển 1.pdf</a></li>
-<li><a href="Minano-Nihongo/Sách Bài Tập - Quyển 2.pdf">Minano-Nihongo/Sách Bài Tập - Quyển 2.pdf</a></li>
-<li><a href="Minano-Nihongo/Từ vựng  & Ngữ pháp - Quyển 2.pdf">Minano-Nihongo/Từ vựng  & Ngữ pháp - Quyển 2.pdf</a></li>
-<li><a href="Minano-Nihongo/Từ vựng & Ngữ pháp - Quyển 1.pdf">Minano-Nihongo/Từ vựng & Ngữ pháp - Quyển 1.pdf</a></li>
+<li><a href="Minano-Nihongo/Sách Bài Tập - Quyển 1.pdf" target="_blank">Minano-Nihongo/Sách Bài Tập - Quyển 1.pdf</a></li>
+<li><a href="Minano-Nihongo/Sách Bài Tập - Quyển 2.pdf" target="_blank">Minano-Nihongo/Sách Bài Tập - Quyển 2.pdf</a></li>
+<li><a href="Minano-Nihongo/Từ vựng  & Ngữ pháp - Quyển 2.pdf" target="_blank">Minano-Nihongo/Từ vựng  & Ngữ pháp - Quyển 2.pdf</a></li>
+<li><a href="Minano-Nihongo/Từ vựng & Ngữ pháp - Quyển 1.pdf" target="_blank">Minano-Nihongo/Từ vựng & Ngữ pháp - Quyển 1.pdf</a></li>
 </ul>
 </li>
 </ul>
-</body></html>
+
+<script>
+    function toggle(event) {
+        event.stopPropagation();
+        const li = event.target.parentElement;
+        for (const child of li.children) {
+            if (child.tagName === "UL") {
+                child.classList.toggle("hidden");
+            }
+        }
+    }
+</script>
+</body>
+</html>
